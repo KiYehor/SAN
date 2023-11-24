@@ -27,28 +27,34 @@ while x==True:
             else:
                 y=True
             while y==True:
-                menu_choose=int(input("1. historia\n2. account balance\n3. possibility of payment\n4.payments\n5.Exit"));
-                if menu_choose==1:
-                    historia=random.randint(1, 1000)
-                    test_list = ['from your account', 'to your account']
-                    rand_idx = random.randrange(len(test_list))
-                    random_text = test_list[rand_idx]
-                    print(historia, 'pln', random_text)
-                if menu_choose==2:
-                    account_balance=random.randint(1,1000)
-                    a=account_balance+historia
-                    print(a, 'pln')
-                if menu_choose==3:
-                    w3=int(input("1.Pay\n2. back"));
-                    if w3==1:
-                        pay=int(input("enter the payment amount"));
-                        if pay<a:
-                            a=a-pay
-                        else:
-                            print('Insufficient funds')
-                    print(" ")
-                if menu_choose==4:
-                    pay1=random.randint(1,1000)
-                    print(pay1, "pln from your account")
-                if menu_choose==5:
-                    break
+                menu_choose=int(input("1. history\n2. account balance\n3. possibility of payment\n4.payments\n5.Exit"));
+                account_balance=random.randint(1,1000)
+                historia=random.randint(1, 1000);
+                match menu_choose:
+                    case 1:
+                        test_list = ['from your account', 'to your account'];
+                        rand_idx = random.randrange(len(test_list));
+                        random_text = test_list[rand_idx];
+                        print(historia, 'pln', random_text);
+                    case 2:
+                        a=account_balance+historia
+                        print(a, 'pln')
+                    case 3:
+                        w3=int(input("1.Pay\n2. back"))
+                        if w3==1:
+                            pay=int(input("enter the payment amount"))
+                            if pay<a:
+                                a=a-pay
+                            else:
+                                print('Insufficient funds')
+                        print(" ")
+                    case 4:
+                        Names =['John', 'Tailor', 'Igor', 'Anna', 'Anna', 'Alexander','Igor']
+                        set=(Names)
+                        rand_n = random.randrange(len(Names))
+                        random_names = set[rand_n]
+                        pay1=random.randint(1,1000)
+                        thisdict = dict(name = random_names, payment = pay1, country = "Norway")
+                        print(thisdict)
+                    case 5:
+                        break
